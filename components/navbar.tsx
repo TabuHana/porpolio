@@ -1,31 +1,97 @@
-import Link from "next/link";
+'use client';
+
+import { Logo } from '@/components/logo';
+
+import { Separator } from '@/components/ui/separator';
+
+import { AlignJustify } from 'lucide-react';
+import { useMediaQuery } from '@/hooks/use-media-query';
+import Link from 'next/link';
+import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+
+const navlinks = [
+  {
+    href: '/',
+    text: 'About me',
+  },
+  {
+    href: '/',
+    text: 'Education',
+  },
+  {
+    href: '/',
+    text: 'Experience',
+  },
+  {
+    href: '/',
+    text: 'Faq',
+  },
+  {
+    href: '/',
+    text: 'Projects',
+  },
+  {
+    href: '/',
+    text: 'Contact',
+  },
+];
 
 export const Navbar = () => {
-    return (
-        <div>
-            <ol className='grid grid-cols-2 gap-x-5 md:gap-y-2 mx-auto mt-5 list-decimal list-inside'>
-                <li>
-                    <Link href='/'>About Me</Link>
-                </li>
-                {/* <li>
-                    <Link href='/bombers'>Bombers Notebook</Link>
-                </li>
-                <li>
-                    <Link href='/rivening'>League Guide Site</Link>
-                </li>
-                <li>
-                    <Link href='/devmo'>Devmo</Link>
-                </li> */}
-                <li>
-                    <Link href='/shop-cms'>Shop-CMS</Link>
-                </li>
-                {/* <li>
-                    <Link href='/touchgrassgg'>TouchGrass.gg</Link>
-                </li>
-                <li>
-                    <Link href='/fun-site'>Fun Site</Link>
-                </li> */}
-            </ol>
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+  return isDesktop ? (
+    <div>
+      <DesktopNav />
+    </div>
+  ) : (
+    <div>
+      <MobileNav />
+    </div>
+  );
+};
+
+const DesktopNav = () => {
+  return (
+    <>
+      <nav className='max-w-screen-md mx-auto py-6 flex justify-between items-center'>
+        <Logo />
+        <div className='flex items-center gap-12 text-xs tracking-widest'>
+          {navlinks.map(link => (
+            <Link
+              key={link.text}
+              href={link.href}
+              className='hover:underline'
+            >
+              {link.text}
+            </Link>
+          ))}
         </div>
-    );
+      </nav>
+    </>
+  );
+};
+
+const MobileNav = () => {
+  return (
+    <>
+      <nav className='mx-auto p-6 flex justify-between items-center'>
+        <Logo />
+        <Sheet>
+          <SheetTrigger>
+            <AlignJustify />
+          </SheetTrigger>
+          <SheetContent className='pt-16 flex flex-col gap-5 tracking-widest'>
+            {navlinks.map(link => (
+              <Link
+                key={link.text}
+                href={link.href}
+                className='hover:underline'
+              >
+                {link.text}
+              </Link>
+            ))}
+          </SheetContent>
+        </Sheet>
+      </nav>
+    </>
+  );
 };
