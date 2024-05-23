@@ -1,39 +1,31 @@
-import { Separator } from "./ui/separator"
+import { Title } from '@/components/ui/title';
+import { Container, ContainerLeft, ContainerRight } from '@/components/ui/container';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const Experience = () => {
   return (
-    <div className="my-10 flex gap-4 h-[200px]">
-      <div className="w-[150px] py-16">
-        <div className="text-muted-foreground text-xs pb-6">Education</div>
-        <div className="space-y-6">
-          <div className="text-muted-foreground text-xs">
-            <div className="text-base font-semibold">Bachelors Of Arts</div>
-            <div>2009 - 20013</div>
-            <div>Cambridge University</div>
-          </div>
-          <div className="text-muted-foreground text-xs">
-            <div className="text-base font-semibold">Bachelors Of Arts</div>
-            <div>2009 - 20013</div>
-            <div>Cambridge University</div>
-          </div>
-        </div>
-      </div>
-      <Separator orientation="vertical" />
-      <div className="flex-1 py-16">
-        <div className="text-muted-foreground text-xs pb-6">Experience</div>
-        <div className="space-y-6">
-          <div className="text-muted-foreground text-xs">
-            <div className="text-base font-semibold">Bachelors Of Arts</div>
-            <div>2009 - 20013</div>
-            <div>Cambridge University</div>
-          </div>
-          <div className="text-muted-foreground text-xs">
-            <div className="text-base font-semibold">Bachelors Of Arts</div>
-            <div>2009 - 20013</div>
-            <div>Cambridge University</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+    <Container>
+      <ContainerLeft>
+        <Title className='py-2'>Education</Title>
+        <Card>
+          <CardHeader className='pl-0'>
+            <CardTitle>Title</CardTitle>
+          </CardHeader>
+          <CardContent className='pl-0'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem facere, possimus similique rem eligendi
+            voluptatibus incidunt iusto.
+          </CardContent>
+        </Card>
+      </ContainerLeft>
+      <ContainerRight>
+        <Title className='py-2 pl-6'>Experience</Title>
+        <Card>
+          <CardHeader>
+            <CardTitle>Mentor for CodeWithAntonio Coding Group</CardTitle>
+          </CardHeader>
+          <CardContent>I help mentor new developers with react and nextjs projects.</CardContent>
+        </Card>
+      </ContainerRight>
+    </Container>
+  );
+};

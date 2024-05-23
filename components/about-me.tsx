@@ -1,47 +1,67 @@
-import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
-import { Button } from './ui/button';
-import { ToolSlider } from './tool-slider';
+
+import { Button } from '@/components/ui/button';
+import { LogoSlider } from '@/components/logo-slider';
+import { Container, ContainerFull, ContainerLeft, ContainerRight } from '@/components/ui/container';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+
+const about = {
+  title: 'I am a full stack developer.',
+  info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quisquam consequuntur natus iure reprehenderit nemo dignissimos inventore recusandae. Officia repellendus hic minima, possimus illum quisquam dolor officiis incidunt perferendis distinctio!',
+};
 
 export const AboutMe = () => {
   return (
     <>
-      <div
-        id='#about-me'
-        className='h-[430px]'
-      >
-        <div className='h-full flex gap-8'>
-          {/* Left side */}
-          <div className='bg-blue-200 relative h-full w-[300px]'>
+      <Container>
+        <ContainerFull className='md:hidden'>
+          <div className='h-[300px] w-[245px] mx-auto relative md:hidden'>
             <Image
-              src='/images/about-me-img.png'
-              alt='Me'
+              src='/images/demo.png'
+              alt='demo img'
               fill
+              className='object-fill'
             />
           </div>
-          {/* Right side */}
-          <div className='flex-1'>
-            <div className='py-2'>
-              <div className='text-xs text-muted-foreground'>About Me</div>
-              <div className='space-y-4'>
-                <div className='text-3xl font-semibold'>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci repudiandae esse
-                </div>
-                <div className='text-sm text-muted-foreground'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla veritatis vero pariatur asperiores, non
-                  atque saepe delectus sint error neque vitae, illum molestiae iste numquam a, debitis distinctio
-                  eveniet. Quisquam!
-                </div>
-                <Button className='rounded-none font-semibold'>Download Resume</Button>
-              </div>
-            </div>
+        </ContainerFull>
+        <ContainerLeft variant='secondary'>
+          <div className='text-xs tracking-widest text-muted-foreground md:hidden'>About me</div>
+          <div className='h-[300px] w-full relative hidden md:block'>
+            <Image
+              src='/images/demo.png'
+              alt='demo img'
+              fill
+              className='object-fill'
+            />
           </div>
-        </div>
-      </div>
-      <div className='h-[80px] mb-4'>
-        <ToolSlider />
-      </div>
-      <Separator />
+        </ContainerLeft>
+        <ContainerRight variant='secondary'>
+          <Card className='hidden md:block'>
+            <CardHeader>
+              <CardDescription>About me</CardDescription>
+              <CardTitle>{about.title}</CardTitle>
+            </CardHeader>
+            <CardContent>{about.info}</CardContent>
+            <CardFooter>
+              <Button>Download Resume</Button>
+            </CardFooter>
+          </Card>
+          <Card className='md:hidden'>
+            <CardHeader>
+              <CardTitle>{about.title}</CardTitle>
+            </CardHeader>
+            <CardContent>{about.info}</CardContent>
+            <CardFooter>
+              <Button>Download Resume</Button>
+            </CardFooter>
+          </Card>
+        </ContainerRight>
+      </Container>
+      <Container variant='secondary'>
+        <ContainerFull>
+          <LogoSlider />
+        </ContainerFull>
+      </Container>
     </>
   );
 };

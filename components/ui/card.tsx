@@ -6,9 +6,10 @@ import { literata } from '@/lib/fonts';
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('text-card-foreground my-6', className)}
+    className={cn('text-card-foreground', className)}
     {...props}
   />
+  // Removed my-6 from classname
 ));
 Card.displayName = 'Card';
 
@@ -60,7 +61,7 @@ const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDiv
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('flex items-center p-6 pt-0', className)}
+      className={cn('flex items-center p-6', className)}
       {...props}
     />
   )

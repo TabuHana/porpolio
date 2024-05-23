@@ -16,19 +16,15 @@ const navlinks = [
   },
   {
     href: '/',
+    text: 'Projects',
+  },
+  {
+    href: '/',
     text: 'Education',
   },
   {
     href: '/',
-    text: 'Experience',
-  },
-  {
-    href: '/',
     text: 'Faq',
-  },
-  {
-    href: '/',
-    text: 'Projects',
   },
   {
     href: '/',
