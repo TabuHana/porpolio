@@ -59,7 +59,7 @@ const DesktopNav = () => {
             <Link
               key={link.text}
               href={link.href}
-              className='hover:underline'
+              className='hover:text-muted-foreground'
             >
               {link.text}
             </Link>
@@ -73,7 +73,7 @@ const DesktopNav = () => {
 const MobileNav = () => {
   return (
     <>
-      <nav className='mx-auto p-6 flex justify-between items-center'>
+      <nav className='max-w-screen-md mx-auto p-6 flex justify-between items-center'>
         <Logo />
         <Sheet>
           <SheetTrigger>
@@ -84,7 +84,7 @@ const MobileNav = () => {
               <Link
                 key={link.text}
                 href={link.href}
-                className='hover:underline'
+                className='hover:text-muted-foreground'
               >
                 {link.text}
               </Link>

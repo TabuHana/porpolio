@@ -1,11 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter, Literata } from 'next/font/google';
 
 import { cn } from '@/lib/utils';
+import { inter } from '@/lib/fonts';
 import { Navbar } from '@/components/navbar';
-
-export const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-export const literata = Literata({ subsets: ['latin'], variable: '--font-literata' });
 
 import './globals.css';
 
