@@ -1,4 +1,4 @@
-import { Inter, Literata } from 'next/font/google';
+import { Inter, Literata, Raleway } from 'next/font/google';
 
 export const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
-export const literata = Literata({ subsets: ['latin'], variable: '--font-literata', display: 'swap' });
+export const literata = Raleway({ subsets: ['latin'], variable: '--font-literata', display: 'swap' });

@@ -1,19 +1,21 @@
 import { AboutMe } from '@/components/about-me';
 import { Projects } from '@/components/projects';
-import { Experience } from '@/components/experience';
+import { Education } from '@/components/education';
 import { Container, ContainerFull, ContainerLeft, ContainerRight } from '@/components/ui/container';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Title } from '@/components/ui/title';
+import { Test } from '@/components/test';
 
 const MainPage = () => {
   return (
-    <main className='max-w-screen-md mx-auto px-6 md:px-0'>
+    <div className='pb-10'>
       <AboutMe />
       <Projects />
-      <Experience />
+      <Education />
       <Container></Container>
-    </main>
+      {/* <Test /> */}
+    </div>
   );
 };
 export default MainPage;

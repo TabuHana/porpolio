@@ -1,25 +1,24 @@
 'use client';
 
-import { Logo } from '@/components/logo';
-
-import { Separator } from '@/components/ui/separator';
-
+import Link from 'next/link';
 import { AlignJustify } from 'lucide-react';
 import { useMediaQuery } from '@/hooks/use-media-query';
-import Link from 'next/link';
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { useMedia } from 'react-use';
+
+import { Logo } from '@/components/logo';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navlinks = [
   {
-    href: '/',
+    href: '/#about-me',
     text: 'About me',
   },
   {
-    href: '/',
+    href: '/#projects',
     text: 'Projects',
   },
   {
-    href: '/',
+    href: '/#education',
     text: 'Education',
   },
   {
@@ -27,14 +26,14 @@ const navlinks = [
     text: 'Faq',
   },
   {
-    href: '/',
+    href: '/#contact',
     text: 'Contact',
   },
 ];
 
 export const Navbar = () => {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
-  return isDesktop ? (
+  const isMobile = useMedia('(min-width: 768px)', true);
+  return isMobile ? (
     <div>
       <DesktopNav />
     </div>

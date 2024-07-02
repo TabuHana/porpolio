@@ -6,13 +6,14 @@ import { Container, ContainerFull, ContainerLeft, ContainerRight } from '@/compo
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 const about = {
-  title: 'I am a full stack developer.',
-  info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quisquam consequuntur natus iure reprehenderit nemo dignissimos inventore recusandae. Officia repellendus hic minima, possimus illum quisquam dolor officiis incidunt perferendis distinctio!',
+  title:
+    'Dedicated full stack developer. With a passion to create responsize and feature rich scalable web apps.',
+  info: 'Hi, my name is Nathan Marcellous. I am currently looking for opportunities to work with a team. I specialize in Nextjs, but I am open to any tech stack or framework.',
 };
 
 export const AboutMe = () => {
   return (
-    <>
+    <div id='about-me'>
       <Container>
         <ContainerFull className='md:hidden'>
           <div className='h-[300px] w-[245px] mx-auto relative md:hidden'>
@@ -39,7 +40,7 @@ export const AboutMe = () => {
           <Card className='hidden md:block'>
             <CardHeader>
               <CardDescription>About me</CardDescription>
-              <CardTitle>{about.title}</CardTitle>
+              <CardTitle className=''>{about.title}</CardTitle>
             </CardHeader>
             <CardContent>{about.info}</CardContent>
             <CardFooter>
@@ -62,6 +63,6 @@ export const AboutMe = () => {
           <LogoSlider />
         </ContainerFull>
       </Container>
-    </>
+    </div>
   );
 };
